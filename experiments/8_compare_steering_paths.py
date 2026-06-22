@@ -370,7 +370,11 @@ def append_html(
                 method === "raw_linear" ? "dot" :
                 method === "pca_additive" ? "dashdot" : "longdash",
         }},
-        visible: method === "baseline" || method === "spline_manifold" ? true : "legendonly",
+        visible:
+          method === "spline_manifold" ||
+          (method === "raw_linear" && (label === "Monday" || label === "Thursday"))
+            ? true
+            : "legendonly",
         hovertemplate:
           `${{steeringPathMethods{js_suffix}[method]}}<br>${{label}}<br>x=%{{x:.3f}}<br>p=%{{y:.4f}}<extra></extra>`,
       }};
