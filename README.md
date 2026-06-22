@@ -3,7 +3,7 @@
 This repo is for reproducing results from Goodfire's manifold steering work, with
 a small weekday-focused report and interactive PCA/steering visualizations.
 
-[https://raghavgupta0296.github.io/manifold-steering/](https://raghavgupta0296.github.io/manifold-steering/)
+Report Link: [https://raghavgupta0296.github.io/manifold-steering/](https://raghavgupta0296.github.io/manifold-steering/)
 
 ## Links
 
