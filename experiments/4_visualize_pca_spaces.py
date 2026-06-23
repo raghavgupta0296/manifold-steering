@@ -3,7 +3,12 @@ import json
 
 import torch
 
-from report_html import REPORT_PATH, append_or_replace_section
+from report_html import (
+    ACTIVATION_PCA_PATH,
+    PROBABILITY_PCA_PATH,
+    REPORT_PATH,
+    append_or_replace_section,
+)
 
 
 project_root = Path(__file__).resolve().parents[1]
@@ -40,7 +45,7 @@ def build_centroids(features: torch.Tensor, examples: list[dict], days: list[str
 
 
 def build_activation_data() -> tuple[dict, list[dict], list[dict]]:
-    artifact_path = project_root / "artifacts" / "weekdays_llama31_8b_layer28_pca32.pt"
+    artifact_path = ACTIVATION_PCA_PATH
     artifact = torch.load(artifact_path, map_location="cpu")
 
     features = artifact["features"]
@@ -75,7 +80,7 @@ def build_activation_data() -> tuple[dict, list[dict], list[dict]]:
 
 
 def build_probability_data() -> tuple[dict, list[dict], list[dict]]:
-    artifact_path = project_root / "artifacts" / "weekdays_probability_pca3.pt"
+    artifact_path = PROBABILITY_PCA_PATH
     artifact = torch.load(artifact_path, map_location="cpu")
 
     features = artifact["features"]

@@ -9,7 +9,13 @@ sys.path.append(str(project_root))
 
 from data.weekdays import WeekdayData
 from model.llama import LlamaModel
-from report_html import REPORT_PATH, append_or_replace_section
+from report_html import (
+    ACTIVATION_PCA_PATH,
+    PCA_FEATURE_STEERING_PATH,
+    REPORT_PATH,
+    SOURCE_ARTIFACT_PATH,
+    append_or_replace_section,
+)
 
 
 def build_centroids(
@@ -198,9 +204,9 @@ def append_steering_html(output_path: Path, summaries: list[dict]) -> None:
 
 
 def main() -> None:
-    source_path = project_root / "artifacts" / "weekdays_llama31_8b_layer28.pt"
-    pca_path = project_root / "artifacts" / "weekdays_llama31_8b_layer28_pca32.pt"
-    output_path = project_root / "artifacts" / "weekdays_pca_feature_steering.pt"
+    source_path = SOURCE_ARTIFACT_PATH
+    pca_path = ACTIVATION_PCA_PATH
+    output_path = PCA_FEATURE_STEERING_PATH
 
     artifact = torch.load(source_path, map_location="cpu")
     pca_artifact = torch.load(pca_path, map_location="cpu")
