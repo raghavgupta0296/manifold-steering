@@ -3,7 +3,10 @@
 This repo is for reproducing results from Goodfire's manifold steering work, with
 a small weekday-focused report and interactive PCA/steering visualizations.
 
-Report Link: [https://raghavgupta0296.github.io/manifold-steering/artifacts/weekdays_pca_spaces.html](https://raghavgupta0296.github.io/manifold-steering/artifacts/weekdays_pca_spaces.html)
+## Reports
+
+- Layer 18 report: [results/weekdays_llama31_8b_layer18_report.html](results/weekdays_llama31_8b_layer18_report.html)
+- Layer 28 report: [results/weekdays_llama31_8b_layer28_report.html](results/weekdays_llama31_8b_layer28_report.html)
 
 ## Links
 
