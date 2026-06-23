@@ -11,7 +11,15 @@ sys.path.append(str(project_root))
 
 from data.weekdays import WeekdayData
 from model.llama import LlamaModel
-from report_html import REPORT_PATH, append_or_replace_section
+from report_html import (
+    ACTIVATION_PCA_PATH,
+    ARTIFACT_DIR,
+    REPORT_PATH,
+    SOURCE_ARTIFACT_PATH,
+    SPLINE_FITS_PATH,
+    RUN_SLUG,
+    append_or_replace_section,
+)
 
 
 COLORS = {
@@ -448,14 +456,10 @@ def main() -> None:
     source_day = "Monday"
     target_day = "Thursday"
 
-    source_path = project_root / "artifacts" / "weekdays_llama31_8b_layer28.pt"
-    pca_path = project_root / "artifacts" / "weekdays_llama31_8b_layer28_pca32.pt"
-    spline_path = project_root / "artifacts" / "weekdays_spline_fits.pt"
-    output_path = (
-        project_root
-        / "artifacts"
-        / f"weekdays_steering_path_comparison{args.output_suffix}.pt"
-    )
+    source_path = SOURCE_ARTIFACT_PATH
+    pca_path = ACTIVATION_PCA_PATH
+    spline_path = SPLINE_FITS_PATH
+    output_path = ARTIFACT_DIR / f"{RUN_SLUG}_steering_path_comparison{args.output_suffix}.pt"
 
     artifact = torch.load(source_path, map_location="cpu")
     pca_artifact = torch.load(pca_path, map_location="cpu")

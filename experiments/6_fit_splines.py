@@ -4,7 +4,13 @@ import math
 
 import torch
 
-from report_html import REPORT_PATH, append_or_replace_section
+from report_html import (
+    ACTIVATION_PCA_PATH,
+    PROBABILITY_PCA_PATH,
+    REPORT_PATH,
+    SPLINE_FITS_PATH,
+    append_or_replace_section,
+)
 
 
 project_root = Path(__file__).resolve().parents[1]
@@ -116,9 +122,9 @@ def make_centroid_points(centroids: torch.Tensor, days: list[str]) -> list[dict]
 
 
 def main() -> None:
-    activation_path = project_root / "artifacts" / "weekdays_llama31_8b_layer28_pca32.pt"
-    probability_path = project_root / "artifacts" / "weekdays_probability_pca3.pt"
-    output_path = project_root / "artifacts" / "weekdays_spline_fits.pt"
+    activation_path = ACTIVATION_PCA_PATH
+    probability_path = PROBABILITY_PCA_PATH
+    output_path = SPLINE_FITS_PATH
 
     activation_artifact = torch.load(activation_path, map_location="cpu")
     probability_artifact = torch.load(probability_path, map_location="cpu")

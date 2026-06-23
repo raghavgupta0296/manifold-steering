@@ -6,15 +6,15 @@ sys.path.append(str(project_root))
 
 from data.weekdays import WeekdayData
 from model.llama import LlamaModel
-from report_html import REPORT_PATH, append_or_replace_section
+from report_html import LAYER, REPORT_PATH, SOURCE_ARTIFACT_PATH, append_or_replace_section
 
 
 def main() -> None:
     data = WeekdayData()
     model = LlamaModel(LlamaModel.paper_model_name).load()
 
-    layer = 28
-    artifact_path = project_root / "artifacts" / "weekdays_llama31_8b_layer28.pt"
+    layer = LAYER
+    artifact_path = SOURCE_ARTIFACT_PATH
     examples = data.as_list()
     prompts = [example.raw_input for example in examples]
 

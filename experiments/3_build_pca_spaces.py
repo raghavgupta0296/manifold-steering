@@ -2,7 +2,13 @@ from pathlib import Path
 
 import torch
 
-from report_html import REPORT_PATH, append_or_replace_section
+from report_html import (
+    ACTIVATION_PCA_PATH,
+    PROBABILITY_PCA_PATH,
+    REPORT_PATH,
+    SOURCE_ARTIFACT_PATH,
+    append_or_replace_section,
+)
 
 
 project_root = Path(__file__).resolve().parents[1]
@@ -62,11 +68,9 @@ def pca_html_summary(name: str, result: dict[str, torch.Tensor]) -> str:
 
 
 def main() -> None:
-    input_path = project_root / "artifacts" / "weekdays_llama31_8b_layer28.pt"
-    activation_output_path = (
-        project_root / "artifacts" / "weekdays_llama31_8b_layer28_pca32.pt"
-    )
-    probability_output_path = project_root / "artifacts" / "weekdays_probability_pca3.pt"
+    input_path = SOURCE_ARTIFACT_PATH
+    activation_output_path = ACTIVATION_PCA_PATH
+    probability_output_path = PROBABILITY_PCA_PATH
 
     artifact = torch.load(input_path, map_location="cpu")
 

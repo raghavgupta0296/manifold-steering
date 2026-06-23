@@ -2,7 +2,19 @@ from pathlib import Path
 
 
 project_root = Path(__file__).resolve().parents[1]
-REPORT_PATH = project_root / "artifacts" / "weekdays_pca_spaces.html"
+MODEL_SLUG = "llama31_8b"
+LAYER = 18
+RUN_SLUG = f"weekdays_{MODEL_SLUG}_layer{LAYER}"
+ARTIFACT_DIR = project_root / "artifacts" / f"{MODEL_SLUG}_layer{LAYER}"
+RESULTS_DIR = project_root / "results"
+REPORT_PATH = RESULTS_DIR / f"{RUN_SLUG}_report.html"
+
+SOURCE_ARTIFACT_PATH = ARTIFACT_DIR / f"{RUN_SLUG}.pt"
+ACTIVATION_PCA_PATH = ARTIFACT_DIR / f"{RUN_SLUG}_pca32.pt"
+PROBABILITY_PCA_PATH = ARTIFACT_DIR / f"{RUN_SLUG}_probability_pca3.pt"
+GEOMETRY_COMPARISON_PATH = ARTIFACT_DIR / f"{RUN_SLUG}_geometry_comparison.pt"
+SPLINE_FITS_PATH = ARTIFACT_DIR / f"{RUN_SLUG}_spline_fits.pt"
+PCA_FEATURE_STEERING_PATH = ARTIFACT_DIR / f"{RUN_SLUG}_pca_feature_steering.pt"
 
 
 def ensure_report() -> None:
