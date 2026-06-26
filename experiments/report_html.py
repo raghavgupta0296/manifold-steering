@@ -3,7 +3,7 @@ from pathlib import Path
 
 project_root = Path(__file__).resolve().parents[1]
 MODEL_SLUG = "llama31_8b"
-LAYER = 18
+LAYER = 12
 RUN_SLUG = f"weekdays_{MODEL_SLUG}_layer{LAYER}"
 ARTIFACT_DIR = project_root / "artifacts" / f"{MODEL_SLUG}_layer{LAYER}"
 RESULTS_DIR = project_root / "results"
