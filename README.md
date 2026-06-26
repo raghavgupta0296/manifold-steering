@@ -7,6 +7,7 @@ a small weekday-focused report and interactive PCA/steering visualizations.
 
 - Layer 28 report: [https://raghavgupta0296.github.io/manifold-steering/results/weekdays_llama31_8b_layer28_report.html](https://raghavgupta0296.github.io/manifold-steering/results/weekdays_llama31_8b_layer28_report.html)
 - Layer 18 report: [https://raghavgupta0296.github.io/manifold-steering/results/weekdays_llama31_8b_layer18_report.html](https://raghavgupta0296.github.io/manifold-steering/results/weekdays_llama31_8b_layer18_report.html)
+- Layer 12 report: [https://raghavgupta0296.github.io/manifold-steering/results/weekdays_llama31_8b_layer12_report.html](https://raghavgupta0296.github.io/manifold-steering/results/weekdays_llama31_8b_layer12_report.html)
 
 ## Links
 
